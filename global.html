@@ -1,0 +1,14 @@
+<script type="text/javascript">
+
+ function openFeedbinLink(event) {
+     if (event.name === "open-feedbin-link") {
+         var newtab = safari.application.activeBrowserWindow.openTab("background");
+         if (typeof(event.message) != undefined) {
+             newtab.url = event.message;
+         }
+     }
+ }
+ 
+ safari.application.addEventListener("message", openFeedbinLink, false);
+
+</script>
